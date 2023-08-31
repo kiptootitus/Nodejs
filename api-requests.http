@@ -9,3 +9,16 @@ Content-Type: application/json
     "price": 2300
 }
 
+### POST New Chart Product
+POST http://127.0.0.1:8000/chart
+Content-Type: application/json
+
+{
+  "name": "Mac-Air",
+  "price": 2300,
+  "description": "256 SSD ROM 8GB RAM Laptop, 9th Gen",
+  "image": "https://cdn.ndtv.com/tech/images/gadgets/thumb/google-chrome-pixel-macbook-pro-635.jpg"
+}
+
+
+

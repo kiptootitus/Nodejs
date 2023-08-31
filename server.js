@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 const Product = require('./models/productModels');
+const Chart = require('./models/chartModels');
 
 app.use(express.json());
 
@@ -27,6 +28,27 @@ app.post('/product', async (req, res) => {
     return res.status(400).send({ error: 'Product creation failed' });
   }
 });
+
+app.get ('/chart', async (req, res) => {
+    try {
+        const chartProducts = await Chart.find();
+        res.status(200).json(chartProducts);
+    } catch (err) {
+        return res.status(400).send({ error: 'Error fetching chart products' });
+    }
+});
+app.post('/chart', async (req, res) => {
+    try {
+      const chartProduct = await Chart.create(req.body);
+      res.status(201).json(chartProduct);
+    } catch (err) {
+      console.error('Error creating chart product:', err);
+      return res.status(400).send({ error: 'Chart product creation failed' });
+    }
+  });
+  
+
+
 
 app.get('/test', (req, res) => {
   res.send('Hello Test!');
