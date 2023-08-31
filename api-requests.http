@@ -1,0 +1,11 @@
+GET http://127.0.0.1:8000/product
+
+### Or for POST request
+POST http://127.0.0.1:8000/product
+Content-Type: application/json
+
+{
+    "name": "mac-ar",
+    "price": 2300
+}
+
