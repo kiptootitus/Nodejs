@@ -56,7 +56,9 @@ app.post('/chart', async (req, res) => {
 
 
 app.get('/test', (req, res) => {
-  res.send('Hello Test!');
+    console.log(req.query);
+    console.log(req.body);
+  res.send(req.query);
 });
 
 const uri = 'mongodb+srv://toshcode:dn8g8Ef7yY7BzWdr@cluster0.je0rm.mongodb.net/Node';

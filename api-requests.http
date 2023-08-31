@@ -41,3 +41,8 @@ Content-type: application/json
     "description": "256 SSD ROM 16GB RAM Laptop, 9th Gen",
     "image": "https://cdn.ndtv.com/tech/images/gadgets/thumb/google-chrome-pixel-macbook-pro-635.jpg"
 }
+
+GET http://127.0.0.1:8000/test?name=macbook
+ 
+
+ 
