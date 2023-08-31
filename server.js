@@ -5,11 +5,16 @@ const Product = require('./models/productModels');
 const Chart = require('./models/chartModels');
 
 app.use(express.json());
+app.use(express.static(__dirname + '/views'))
 
 app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
-
+    res.sendFile('home.html', { root: __dirname + '/views' });
+  });
+  
+  app.get('/chart', (req, res) => {
+    res.sendFile('chart.html', { root: __dirname + '/views' });
+  });
+  
 app.get('/product', async (req, res) => {
   try {
     const products = await Product.find();

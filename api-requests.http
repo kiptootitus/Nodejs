@@ -22,3 +22,22 @@ Content-Type: application/json
 
 
 
+POST  http://127.0.0.1:8000/chart
+Content-type: application/json
+
+{
+    "name": "MacBook Air",
+    "price": 2200,
+    "description": "256 SSD ROM 16GB RAM Laptop, 9th Gen",
+    "image": "https://cdn.ndtv.com/tech/images/gadgets/thumb/google-chrome-pixel-macbook-pro-635.jpg"
+}
+
+POST  http://127.0.0.1:8000/product
+Content-type: application/json
+
+{
+    "name": "MacBook Air",
+    "price": 2200,
+    "description": "256 SSD ROM 16GB RAM Laptop, 9th Gen",
+    "image": "https://cdn.ndtv.com/tech/images/gadgets/thumb/google-chrome-pixel-macbook-pro-635.jpg"
+}
