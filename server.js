@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const app = express();
 const Product = require('./models/productModels');
 const Chart = require('./models/chartModels');
+const Profile = require('./models/profileModel');
 
 app.use(express.json());
 app.use(express.static(__dirname + '/views'))
@@ -14,7 +15,18 @@ app.get('/', (req, res) => {
   app.get('/chart', (req, res) => {
     res.sendFile('chart.html', { root: __dirname + '/views' });
   });
-  
+app.get('/profile', async(req, res) =>{
+    try {
+        const profile = await Profile.find();
+        res.status(200).json(profile);
+    } catch (err) {
+        return res.status(400).send({ error: 'Error fetching profile' });
+    }
+})
+
+
+
+
 app.get('/product', async (req, res) => {
   try {
     const products = await Product.find();
