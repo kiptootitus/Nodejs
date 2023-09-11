@@ -7,14 +7,19 @@ const Profile = require('./models/profileModel');
 
 app.use(express.json());
 app.use(express.static(__dirname + '/views'))
+app.set('view engine', 'ejs');
 
-app.get('/', (req, res) => {
-    res.sendFile('home.html', { root: __dirname + '/views' });
+// Serve static files from the 'public' directory
+app.use(express.static(__dirname + '/public'));
+
+// index page
+app.get('/', function(req, res) {
+ 
+
+  res.render('pages/home', {
+    title: 'Home'
   });
-  
-  app.get('/chart', (req, res) => {
-    res.sendFile('chart.html', { root: __dirname + '/views' });
-  });
+});
 app.get('/profile', async(req, res) =>{
     try {
         const profile = await Profile.find();
