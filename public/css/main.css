@@ -1,0 +1,8 @@
+.container {
+    height: 100vh; /* Use the viewport height for full-height container */
+  }
+
+  .section {
+    flex: 1; /* Each section takes up equal space */
+    border: 1px solid #ccc; /* Optional border for separation */
+  }

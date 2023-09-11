@@ -31,7 +31,7 @@ app.get('/profile', async(req, res) =>{
 
 
 
-
+// product api  should have 3 endpoints
 app.get('/product', async (req, res) => {
   try {
     const products = await Product.find();
@@ -50,6 +50,8 @@ app.post('/product', async (req, res) => {
     return res.status(400).send({ error: 'Product creation failed' });
   }
 });
+
+// chart api should have 2 endpoints
 
 app.get ('/chart', async (req, res) => {
     try {
@@ -71,7 +73,7 @@ app.post('/chart', async (req, res) => {
   
 
 
-
+// test api
 app.get('/test', (req, res) => {
     console.log(req.query);
     console.log(req.body);
